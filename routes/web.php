@@ -8,9 +8,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['Middleware' => 'user'], function() {
 
-});
-Route::group(['Middleware' => 'admin'], function() {
-
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('/teste', 'ViewController@teste');
 });

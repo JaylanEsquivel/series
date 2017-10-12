@@ -17,9 +17,24 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
+                                <input id="tipo" name="tipo" type="hidden" value="C"/>
                                 @if ($errors->has('name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Cpf" class="col-md-4 control-label">Cpf</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="cpf" class="form-control" name="cpf" required>
+
+                                @if ($errors->has('cpf'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('cpf') }}</strong>
                                 </span>
                                 @endif
                             </div>

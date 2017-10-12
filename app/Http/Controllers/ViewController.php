@@ -2,6 +2,14 @@
 
 namespace App\Http\Controllers;
 
-class ViewController {
+class ViewController extends Controller {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
+    public function teste() {
+        echo 'teste';
+    }
 
 }
