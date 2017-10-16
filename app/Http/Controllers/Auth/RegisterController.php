@@ -63,6 +63,7 @@ use RegistersUsers;
                     'email' => $data['email'],
                     'password' => bcrypt($data['password']),
                     'tipo' => $data['tipo'],
+                    'cpf' => $data['cpf'],
         ]);
     }
 
