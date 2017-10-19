@@ -4,6 +4,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/LoginUser', 'ViewController@Loginuser');
+Route::get('/RegistrerUser', 'ViewController@Registreruser');
+
+
 Route::get('/admin', 'RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');

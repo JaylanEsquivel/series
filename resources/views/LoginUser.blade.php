@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SERIES</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container-fluid" style="background-image: url('../img/fundo.png'); background-size: 100%;width: 100%; height: 100%;">
+            <div class="row">
+                <div class="col-lg-12" style="background-color: #099ef4; padding-bottom: 10px; padding-top: 10px; height: 60px">
+                    <div class="row">
+                      <div class="col-lg-10" style="padding-top: 3px">
+                          <span style="font-weight: bold; font-size: 20px;">Login de Usuario</span>
+                      </div>
+                      <div class="col-lg-2">
+                          <a class="btn btn-dark" href="{{ url('LoginUser') }}">Entrar</a>&nbsp;&nbsp;
+                        <a class="btn btn-dark" href="{{ url('RegistrerUser') }}">Registrar</a>
+                      </div>
+                      </div>
+                 </div>
+            </div>
+            <div class="container">
+                <div class="row" style="padding-top: 10%">
+        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12" ></div>
+        <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12" style="background-color: #FFF; border: solid 0.6px #ccc ; padding-top: 10px; border-radius: 10px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div style="float: right;">
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-mail</label>
+
+                            <div class="col-md-12">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Senha</label>
+
+                            <div class="col-md-12">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-5">
+                                <button type="submit" class="btn btn-success btn-sm btn-block">
+                                    Entrar
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    Esqueceu sua Senha?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+        </div>
+        
+<!-- JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<!-- JS -->
+    </body>
+</html>
