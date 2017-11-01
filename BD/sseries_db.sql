@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Out-2017 às 02:12
+-- Generation Time: 02-Nov-2017 às 00:47
 -- Versão do servidor: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -66,7 +66,8 @@ CREATE TABLE `migrations` (
 
 CREATE TABLE `serie` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL
+  `nome` varchar(255) NOT NULL,
+  `ext` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -105,15 +106,16 @@ CREATE TABLE `users` (
   `tipo` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `tipo`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'jaylan', 'jaylan1997@hotmail.com', '$2y$10$FC6/D6aLSe1SpdBP5dPPJ.Tbnkrr79Y9ioI6BDe4vz8tmAG5tWdvW', 'C', NULL, '2017-10-12 03:11:29', '2017-10-12 03:11:29');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `tipo`, `remember_token`, `created_at`, `updated_at`, `usuario_id`) VALUES
+(1, 'jaylan', 'jaylan1997@hotmail.com', '$2y$10$FC6/D6aLSe1SpdBP5dPPJ.Tbnkrr79Y9ioI6BDe4vz8tmAG5tWdvW', 'C', NULL, '2017-10-12 03:11:29', '2017-10-12 03:11:29', 0);
 
 -- --------------------------------------------------------
 
@@ -123,10 +125,24 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `tipo`, `remember_token`
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `tipo` char(1) NOT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
   `cpf` varchar(11) NOT NULL,
-  `adm` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 = false\n1 = true'
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `name`, `email`, `password`, `tipo`, `remember_token`, `cpf`, `created_at`, `updated_at`) VALUES
+(1, 'Sala 11', 'carlostinin@gmail.com', '$2y$10$HtehNiMSLqJLHR3FC6J/veznQxmSjq1PfK/m1HfNcqqhrMfnuPkKe', 'C', 'DgDDbZab5ZojhazKsjwI4lGFotvB20c1XZXbBcQzf7vUGX8YfwV3sSlObwx6', '06454678910', '2017-11-01 23:37:11', '2017-10-17 00:21:54'),
+(2, 'Jaciel', 'jacielcalcada@hotmail.com', '$2y$10$exZw055Nq7Bv0Nb3HSUMe.PPi9qGduNmijakSoC1qgFX4AUQeXio6', 'A', 'SBxwj60I21yqja1N47SJ6aOrLAmvdrga5fCEdh3s2iENEHGpARWm4oSdGlqp', '01523625804', '2017-11-01 23:37:32', '2017-10-17 00:46:22'),
+(3, 'Roberao', 'roberiogaldino@bol.com.br', '$2y$10$UhnrhHogQfn0xUSwPm/75Oo0sy5MYI82V6jrRFh8LeZG1AT0lT7aO', 'C', 'FibLzbr67oaLKrdEcOJMDsN0qvLapI5QzQBqeIZ0HNCAug0f6JLhzqrb9k8O', '2402442474', '2017-11-01 23:39:03', '2017-11-02 02:38:50');
 
 -- --------------------------------------------------------
 
@@ -207,7 +223,8 @@ ALTER TABLE `users`
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `usuario_has_episodio`
@@ -263,7 +280,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
