@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{url('css/estilo_one.css')}}" />
     </head>
     <body>
-        <div class="container-fluid" style="background-image: url('../img/fundo.png'); background-size: 100%;width: 100%; height: 100%;">
+        <div class="container-fluid" style="background-image: url('img/fundo.png'); background-size: 100%;width: 100%; height: 100%;">
             <div class="row">
                 <div class="col-lg-12 perfil">
                     <div class="row">

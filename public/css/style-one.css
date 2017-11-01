@@ -1,0 +1,61 @@
+/*
+    CSS DA PAGINA;
+*/
+/* 
+    Created on : 19/10/2017, 16:59:25
+    Author     : JAYLAN ESQUIVEL PEREIRA SANTOS
+*/
+
+/***************************************** TOPO DA PAGINA *************************************************/
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+body,html{
+    width: 100%; 
+    height:100%;
+}
+.marg-one{
+  margin-top: 10px;
+}
+
+.cor{
+    color:#eae8f4;
+    text-align: center;
+    margin-top: -5px;
+    text-shadow: 0px 0px 80px #fff;
+}
+
+.back{
+    background-image:url('../img/3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.font{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+/***************************************** FIM DE TOPO DA PAGINA ******************************************/
+
+
+
+/************************************* CONTEUDO CENTRAL DA PAGINA *****************************************/
+
+
+
+
+/************************************* FIM DE CONTEUDO CENTRAL DA PAGINA **********************************/
+
+
+
+
+/********************************************* FOOTER DA PAGINA *******************************************/
+
+/***************************************** FIM DE FOOTER DA PAGINA ****************************************/
+
+/***************************************** PAGINA: <NOME DA PAGINA> ***************************************/
+
+/**************************************** FIM DE PAGINA: <NOME DA PAGINA> *********************************/
+
+
+
+
