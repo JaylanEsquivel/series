@@ -8,12 +8,12 @@
         <link rel="stylesheet" href="{{url('css/estilo_one.css')}}" />
     </head>
     <body>
-        <div class="container-fluid" style="background-image: url('../img/fundo.png'); background-size: 100%;width: 100%; height: 100%;">
+        <div class="container-fluid" style="background-image: url('img/fundo.png'); background-size: 100%;width: 100%; height: 100%;">
             <div class="row">
                 <div class="col-lg-12 perfil">
                     <div class="row">
                       <div class="col-lg-10 spas">
-                          <span class="titulo">REGISTRO DE USUÁRIO</span>
+                          <img width="77" style="margin-top: -20px" class="img-responsive" src="img/5.png">
                       </div>
                       <div class="col-lg-2">
                         <a class="btn btn-dark" href="{{ url('login') }}">Entrar</a>&nbsp;&nbsp;
