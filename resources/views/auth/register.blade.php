@@ -13,7 +13,7 @@
                 <div class="col-lg-12 perfil">
                     <div class="row">
                       <div class="col-lg-10 spas">
-                          <span class="titulo">REGISTRO DE USUÁRIO</span>
+                          <img width="77" style="margin-top: -20px" class="img-responsive" src="img/5.png">
                       </div>
                       <div class="col-lg-2">
                         <a class="btn btn-dark" href="{{ url('login') }}">Entrar</a>&nbsp;&nbsp;
