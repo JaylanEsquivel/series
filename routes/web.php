@@ -11,4 +11,8 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/teste', 'ViewController@teste');
 });
 
+Route::get('/borda', function () {
+    return view('bordas');
+});
+
 Auth::routes();
