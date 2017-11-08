@@ -10,5 +10,8 @@ class ViewController extends Controller {
     public function dashboard() {
         return view('index');
     }
+    public function sair() {
+        return view('copia');
+    }
 
 }

@@ -6,13 +6,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'ViewController@dashboard');
+Route::get('/copia', 'ViewController@sair');
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/teste', 'ViewController@teste');
-});
-
-Route::get('/borda', function () {
-    return view('bordas');
 });
 
 Auth::routes();
