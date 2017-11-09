@@ -8,7 +8,7 @@ class ViewController extends Controller {
         $this->middleware('auth');
     }
     public function dashboard() {
-        return view('index');
+        return view('principal');
     }
     public function sair() {
         return view('copia');

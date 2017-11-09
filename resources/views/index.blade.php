@@ -31,8 +31,6 @@
     </head>
 
     <body>
-        
-        @section('sidebar')
 
         <section id="container" >
             <!-- **********************************************************************************************************************************************************
@@ -85,7 +83,7 @@
                                 <span>Cadastrar</span>
                             </a>
                             <ul class="sub">
-                                <li><a  href="{{url('setor/cadastrar')}}">Categoria</a></li>
+                                <li><a  href="{{url('categoria')}}">Categoria</a></li>
                             </ul>
                             <ul class="sub">
                                 <li><a  href="{{url('cargo/cadastrar')}}">Temporada</a></li>
@@ -153,14 +151,10 @@
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
+                            @section('sidebar')
 
-                    <div class="row">
-                        <div class="col-lg-12 container main-chart">
-
-                            @yield('content')
-                            
-                        </div>
-                    </div>
+                            @show   
+                      <center>Copyright © 2017 Todos direitos resevados The Magic Series</center>
                 </section>
             </section>
         </section>
@@ -218,9 +212,6 @@
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
             }
-        </script>
-
-        @show   
-        
+        </script>        
     </body>
 </html>
