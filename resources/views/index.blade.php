@@ -47,7 +47,10 @@
                 <a href="{{ url('dashboard')}}" class="logo"><b>Magic Series</b></a>
                 
                 <div class="pull-right padd">
-                  <a class="btn btn-danger" href="{{ route('logout') }}">Sair</a>
+                    <a class="btn btn-danger" href="{{ url('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+                    <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </header>
             <!--header end-->
