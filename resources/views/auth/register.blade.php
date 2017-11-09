@@ -13,7 +13,7 @@
                 <div class="col-lg-12 perfil">
                     <div class="row">
                       <div class="col-lg-10 spas">
-                          <img width="77" style="margin-top: -20px" class="img-responsive" src="img/5.png">
+                          <a href="{{ url('/')}}"> <img width="70" style="margin-top: -15px" class="img-responsive" src="img/5.png"></a>
                       </div>
                       <div class="col-lg-2">
                         <a class="btn btn-dark" href="{{ url('login') }}">Entrar</a>&nbsp;&nbsp;
