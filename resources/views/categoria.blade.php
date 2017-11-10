@@ -34,20 +34,36 @@
 		                              <th>Ações</th>
 		                          </tr>
 		                          </thead>
-		                          <tbody>
+		                          <tbody>                                             
+                                    @forelse ($cate as $c)
 		                          <tr>
-		                              <td>Mark</td>
+		                              <td>{{ $c->nome }}</td>
                                               <td>
                                                   <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                                   <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                               </td>
 		                          </tr>
+                                    @empty
+                                          <p>Nenhuma Categoria cadastradas.</p>
+                                    @endforelse
+		                          </tbody>
+		                      </table>
+                    <a href="#" id="subir" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i> Categorias inativa</a>
+          	</div><!-- /form-panel -->
+           </div><!-- /col-lg-12 -->
+        </div><!-- /row -->
+        <div class="row mt ver">
+           <div class="col-lg-12">
+          	<div class="form-panel">
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Categorias Inativas</h4>
+                     <table class="table">
+		                          <thead>
 		                          <tr>
-		                              <td>Jacob</td>
-                                              <td>
-                                                  <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                              </td>		                          </tr>
+		                              <th>Nome Categoria</th>
+		                              <th>Ações</th>
+		                          </tr>
+		                          </thead>
+		                          <tbody>
 		                          <tr>
 		                              <td>Larry</td>
                                               <td>
@@ -56,12 +72,25 @@
                                               </td>		                          </tr>
 		                          </tbody>
 		                      </table>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i>Categorias inativa</button>
           	</div><!-- /form-panel -->
            </div><!-- /col-lg-12 -->
         </div><!-- /row -->
 
     </div>
 </div>
-
 @endsection
+@section('js')
+<script>
+$(document).ready(function(){
+        $('#subir').click(function(){
+            var disp = $('.ver').css("display");
+           if( disp == "none"){
+               $('.ver').css("display","block");
+           }else{
+               $('.ver').css("display","none");
+           }
+        })
+    })
+</script>
+@endsection
+

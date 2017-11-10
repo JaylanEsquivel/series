@@ -187,6 +187,10 @@ hr {
 	margin-top: 25px;
 }
 
+.ver{
+    display: none;
+}
+
 .mb {
 	margin-bottom: 25px;
 }
