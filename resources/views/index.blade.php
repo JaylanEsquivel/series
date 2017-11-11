@@ -92,7 +92,7 @@
                                 <li><a  href="{{url('cargo/cadastrar')}}">Temporada</a></li>
                             </ul>
                             <ul class="sub">
-                                <li><a  href="{{ url('/funcionario/cadastrar')}}">Serie</a></li>
+                                <li><a  href="{{ url('series/cadastrar')}}">Serie</a></li>
                             </ul>
                             <ul class="sub">
                                 <li><a  href="{{ url('/funcionario/cadastrar')}}">Episodios</a></li>

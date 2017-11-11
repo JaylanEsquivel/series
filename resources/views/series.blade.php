@@ -4,11 +4,11 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h3><i class="fa fa-angle-right"></i>Categoria</h3>
+        <h3><i class="fa fa-angle-right"></i>Series</h3>
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
-                   <h4 class="mb"><i class="fa fa-angle-right"></i> Cadastro de Categoria</h4>
+                   <h4 class="mb"><i class="fa fa-angle-right"></i> Cadastro de Series</h4>
                    <form class="form-horizontal style-form" method="get">
                        <div class="form-group">
                               <label class="col-sm-1 control-label">Nome:</label>
@@ -26,11 +26,11 @@
         <div class="row mt">
            <div class="col-lg-12">
           	<div class="form-panel">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i> Categorias Registradas</h4>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Series Registradas</h4>
                      <table class="table">
 		                          <thead>
 		                          <tr>
-		                              <th>Nome Serie</th>
+		                              <th>Nome Categoria</th>
 		                              <th>Ações</th>
 		                          </tr>
 		                          </thead>
