@@ -5,7 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class Temporada extends Model {
-    private $table = 'temporada';
+    
+    protected $fillable = ['nome'];
+    
+    protected $table = 'temporada';
+   
     public    $timestamps = false;
     
 }

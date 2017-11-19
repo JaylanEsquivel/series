@@ -5,6 +5,8 @@
 <div class="row">
     <div class="col-lg-12">
         <h3><i class="fa fa-angle-right"></i>Séries</h3>
+        
+        @if(!isset($editarSeries))
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
@@ -14,6 +16,17 @@
                             <label class="col-sm-1 control-label">Nome:</label>
                             <div class="col-sm-11">
                                 <input type="text" id="nome" name="nome" class="form-control">
+                            </div>
+                            <br><br><br>
+                            <label class="col-sm-1 control-label">Categorias:</label>
+                            <div class="col-sm-11">
+                                <select name="categoria_id" id="categoria_id" class="form-control selectpicker" multiple title="Selecione">
+                                    @forelse($categorias as $categoria)
+                                    <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
+                                    @empty
+                                    <option value="">Nenhuma Categoria cadastrada</option>
+                                    @endforelse
+                                </select>
                             </div>
                             <br><br><br>
                             <label class="col-sm-1 control-label">Sinopse:</label>
@@ -31,6 +44,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
         @if(isset($editarSeries))
             <div class="row mt">
@@ -66,6 +80,7 @@
             </div>
         @endif
 
+        @if(!isset($editarSeries))
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
@@ -96,6 +111,7 @@
                 </div><!-- /form-panel -->
             </div><!-- /col-lg-12 -->
         </div><!-- /row -->
+        @endif
     </div>
 </div>
 @endsection

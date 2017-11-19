@@ -15,13 +15,16 @@
         <link href="{{ url('font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="{{ url('css/zabuto_calendar.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('js/gritter/css/jquery.gritter.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ url('lineicons/style.css') }}">    
+        <link rel="stylesheet" type="text/css" href="{{ url('lineicons/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap-select.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url('css/datatables.css') }}">
 
         <!-- Custom styles for this template -->
         <link href="{{ url('css/style.css') }}" rel="stylesheet">
         <link href="{{ url('css/style-responsive.css') }}" rel="stylesheet">
 
         <script src="{{ url('js/chart-master/Chart.js') }}"></script>
+        
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -85,7 +88,7 @@
                                 <li><a  href="{{ url('series')}}">Serie</a></li>
                             </ul>
                             <ul class="sub">
-                                <li><a  href="{{ url('')}}">Episodios</a></li>
+                                <li><a  href="{{ url('episodio')}}">Episodios</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -160,8 +163,11 @@
         <script src="{{ url('js/jquery.scrollTo.min.js') }}"></script>
         <script src="{{ url('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
         <script src="{{ url('js/jquery.sparkline.js') }}"></script>
-
-
+        <script src="{{ url('js/bootstrap-select.js') }}"></script>
+        <script src="{{ url('js/datatables.js') }}"></script>
+        
+        
+        
         <!--common script for all pages-->
         <script src="{{ url('js/common-scripts.js') }}"></script>
 

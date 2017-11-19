@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Series;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller
@@ -23,7 +24,8 @@ class SeriesController extends Controller
     public function index()
     {
         $series = Series::all();
-        return view('series', compact('series'));
+        $categorias = Categoria::all();
+        return view('series', compact('series','categorias'));
     }
 
     /**
@@ -49,9 +51,10 @@ class SeriesController extends Controller
     public function edit($id)
     {
         $editarSeries = Series::find($id);
+        $categorias = Categoria::all();
         $series = Series::all();
         //dd($editarCategoria);
-        return view('series', compact('series','editarSeries'));
+        return view('series', compact('series','editarSeries','categorias'));
         
     }
 

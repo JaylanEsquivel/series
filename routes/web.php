@@ -28,6 +28,17 @@ Route::group(['middleware' => 'admin'], function() {
 });
 //-----------------------------------------------------------------------------
 
+//--------------------------- ROTAS DE EPISODIO ----------------------------------
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('/episodio', 'EpisodioController@index');
+    Route::post('/episodio/cadastrar', 'EpisodioController@store');
+    Route::get('/episodio/excluir/{id}', 'EpisodioController@destroy');
+    Route::get('/episodio/editar/{id}', 'EpisodioController@edit');
+    Route::post('/episodio/atualizar/', 'EpisodioController@update');
+    Route::post('/episodio/procurar/', 'EpisodioController@procurar');
+});
+//-----------------------------------------------------------------------------
+
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/teste', 'ViewController@teste');
 });

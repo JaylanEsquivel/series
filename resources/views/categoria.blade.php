@@ -5,6 +5,8 @@
 <div class="row">
     <div class="col-lg-12">
         <h3><i class="fa fa-angle-right"></i>Categoria</h3>
+        
+        @if(!isset($editarCategoria))
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
@@ -25,6 +27,7 @@
                 </div>
             </div>
         </div>
+        @endif
         
         @if(isset($editarCategoria))
             <div class="row mt">
@@ -54,6 +57,7 @@
             </div>
         @endif
         
+        @if(!isset($editarCategoria))
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
@@ -82,6 +86,7 @@
                 </div><!-- /form-panel -->
             </div><!-- /col-lg-12 -->
         </div><!-- /row -->
+        @endif
     </div>
 </div>
 @endsection
