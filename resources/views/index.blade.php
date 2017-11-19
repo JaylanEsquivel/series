@@ -43,7 +43,7 @@
                 </div>
                 <!--logo start-->
                 <a href="{{ url('dashboard')}}" class="logo"><b>Magic Series</b></a>
-                
+
                 <div class="pull-right padd">
                     <a class="btn btn-danger" href="{{ url('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
                     <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
@@ -60,7 +60,7 @@
             <aside>
                 <div id="sidebar"  class="nav-collapse ">
                     <!-- sidebar menu start-->
-                 @if( Auth::user()->tipo == 'A' )  
+                    @if( Auth::user()->tipo == 'A' )  
                     <ul class="sidebar-menu" id="nav-accordion">
 
                         <p class="centered"><a href="{{ url('dashboard')}}"><img src="{{ url('img/ui-sam2.jpg') }}" class="img-circle" width="60"></a></p>
@@ -68,16 +68,9 @@
 
                         <li class="sub-menu">
                             <a href="{{ url('dashboard')}}" >
-                                <i class="fa fa-dashboard"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="{{ url('dashboard')}}" >
                                 <i class="fa fa-desktop"></i>
                                 <span>Minhas Series</span>
                             </a>
-                            
                         </li>
 
                         <li class="sub-menu">
@@ -89,13 +82,10 @@
                                 <li><a  href="{{url('categoria')}}">Categoria</a></li>
                             </ul>
                             <ul class="sub">
-                                <li><a  href="{{url('cargo/cadastrar')}}">Temporada</a></li>
+                                <li><a  href="{{ url('series')}}">Serie</a></li>
                             </ul>
                             <ul class="sub">
-                                <li><a  href="{{ url('series/cadastrar')}}">Serie</a></li>
-                            </ul>
-                            <ul class="sub">
-                                <li><a  href="{{ url('/funcionario/cadastrar')}}">Episodios</a></li>
+                                <li><a  href="{{ url('')}}">Episodios</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -104,15 +94,15 @@
                                 <span>Configurações</span>
                             </a>
                             <ul class="sub">
-                                <li><a  href="{{url('setor/cadastrar')}}">Privacidade</a></li>
+                                <li><a  href="{{url('')}}">Privacidade</a></li>
                             </ul>
                             <ul class="sub">
-                                <li><a  href="{{url('cargo/cadastrar')}}">Controle de Usúarios</a></li>
+                                <li><a  href="{{url('')}}">Controle de Usúarios</a></li>
                             </ul>
                         </li>
 
                     </ul>
-            @else
+                    @else
                     <ul class="sidebar-menu" id="nav-accordion">
 
                         <p class="centered"><a href="{{ url('dashboard')}}"><img src="{{ url('img/ui-sam2.jpg') }}" class="img-circle" width="60"></a></p>
@@ -136,12 +126,12 @@
                                 <span>Configurações</span>
                             </a>
                             <ul class="sub">
-                                <li><a  href="{{url('setor/cadastrar')}}">Privacidade</a></li>
+                                <li><a  href="{{url('')}}">Privacidade</a></li>
                             </ul>
                         </li>
 
                     </ul>
-            @endif
+                    @endif
 
                     <!-- sidebar menu end-->
                 </div>
@@ -154,10 +144,10 @@
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
-                            @section('sidebar')
+                    @section('sidebar')
 
-                            @show   
-                      <center>Copyright © 2017 Todos direitos resevados The Magic Series</center>
+                    @show   
+                    <center>Copyright © 2017 Todos direitos resevados The Magic Series</center>
                 </section>
             </section>
         </section>

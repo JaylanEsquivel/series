@@ -5,7 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class Episodio extends Model {
-    private $table = 'episodio';
+    
+    protected $fillable = ['serie_id','temporada_id','nome'];
+    
+    private   $table = 'episodio';
+    
     public    $timestamps = false;
     
 }

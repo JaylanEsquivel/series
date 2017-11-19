@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Models\Categoria;
+use App\Models\Series;
 use Illuminate\Http\Request;
 
-class CategoriaController extends Controller
+class SeriesController extends Controller
 {
     /**
      * Controla o acesso do admin.
@@ -22,8 +22,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::all();
-        return view('categoria', compact('categorias'));
+        $series = Series::all();
+        return view('series', compact('series'));
     }
 
     /**
@@ -35,23 +35,23 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        Categoria::create($request->all());
-        return redirect()->action('CategoriaController@index');
+        Series::create($request->all());
+        return redirect()->action('SeriesController@index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Setor  $setor
+     * @param  \App\Models\Series  $id
      * @return \Illuminate\Http\Response
      */
     
     public function edit($id)
     {
-        $editarCategoria = Categoria::find($id);
-        $categorias = Categoria::all();
+        $editarSeries = Series::find($id);
+        $series = Series::all();
         //dd($editarCategoria);
-        return view('categoria', compact('categorias','editarCategoria'));
+        return view('series', compact('series','editarSeries'));
         
     }
 
@@ -64,10 +64,10 @@ class CategoriaController extends Controller
      */
     public function update(Request $request)
     {
-        $categoria = Categoria::find($request->id);
-        $categoria->nome = $request->nome;
-        $categoria->save();
-        return redirect()->action('CategoriaController@index');
+        $series = Series::find($request->id);
+        $series->nome = $request->nome;
+        $series->save();
+        return redirect()->action('SeriesController@index');
     }
 
     /**
@@ -78,8 +78,8 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        $categoria = Categoria::find($id);
-        $categoria->delete();
-        return redirect()->action('CategoriaController@index');
+        $series = Series::find($id);
+        $series->delete();
+        return redirect()->action('SeriesController@index');
     }
 }

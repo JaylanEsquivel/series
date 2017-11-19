@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1>Jaylannnn</h1>
+        <h1></h1>
     </div>
 </div>
 
